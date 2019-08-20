@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-//import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {Route, BrowserRouter as Router} from 'react-router-dom';
 import Login from './login/login';
 import Registro from './registro/registro';
-import Dashboard from './dashboard/dashboard';
+import App from './App';
+import Home from './home/home';
 
 const firebase = require('firebase');
 require('firebase/firestore');
@@ -28,9 +28,10 @@ require('firebase/firestore');
  const routing = (
   <Router>
     <div id='routing-container'>
+      <Route path='/' exact component={Home}></Route>
       <Route path='/login' component={Login}></Route>
       <Route path='/registro' component={Registro}></Route>
-      <Route path='/dashboard' component={Dashboard}></Route>
+      <Route path='/dashboard' component={App}></Route>
     </div>
   </Router>
  );
